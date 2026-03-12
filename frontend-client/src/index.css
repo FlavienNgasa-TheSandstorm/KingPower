@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 30, 58, 138; /* Bleu foncé */
+    --secondary: 234, 179, 8; /* Jaune */
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl font-bold;
+  }
+  h2 {
+    @apply text-3xl md:text-4xl font-bold;
+  }
+  h3 {
+    @apply text-2xl font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-blue-900 text-white px-6 py-3 rounded-lg 
+           hover:bg-blue-800 transition duration-200 
+           font-semibold inline-block;
+  }
+
+  .btn-secondary {
+    @apply bg-yellow-500 text-blue-900 px-6 py-3 rounded-lg 
+           hover:bg-yellow-400 transition duration-200 
+           font-semibold inline-block;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-lg p-6 
+           hover:shadow-xl transition-shadow duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-lg
+           focus:outline-none focus:ring-2 focus:ring-blue-900 
+           focus:border-transparent transition-all;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .gradient-blue {
+    @apply bg-gradient-to-r from-blue-900 to-blue-700;
+  }
+}

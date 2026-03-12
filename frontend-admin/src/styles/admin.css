@@ -1,0 +1,15 @@
+/* Importer Tailwind d'abord */
+@import '../index.css';
+
+/* Ensuite les composants */
+@import './components/sidebar.css';
+@import './components/header.css';
+@import './components/stats-card.css';
+
+/* Enfin les pages */
+@import './pages/dashboard.css';
+@import './pages/products.css';
+@import './pages/orders.css';
+@import './pages/order-detail.css';
+@import './pages/customers.css';
+@import './pages/login.css';

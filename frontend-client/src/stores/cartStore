@@ -1,0 +1,95 @@
+// stores/cartStore.js
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+
+const useCartStore = create(
+  persist(
+    (set, get) => ({
+      items: [],
+      
+      addItem: (product) => {
+        console.log('🛒 addItem appelé avec:', product);
+        
+        set((state) => {
+          const existingItem = state.items.find(item => item.id === product.id);
+          
+          if (existingItem) {
+            // Mettre à jour la quantité si le produit existe déjà
+            const updatedItems = state.items.map(item =>
+              item.id === product.id
+                ? { ...item, quantity: item.quantity + product.quantity }
+                : item
+            );
+            console.log('📦 Produit existant mis à jour:', updatedItems);
+            return { items: updatedItems };
+          } else {
+            // Ajouter le nouveau produit
+            const newItems = [...state.items, product];
+            console.log('📦 Nouveau produit ajouté:', newItems);
+            return { items: newItems };
+          }
+        });
+      },
+      
+      removeItem: (id) => {
+        set((state) => ({
+          items: state.items.filter(item => item.id !== id)
+        }));
+      },
+      
+      updateQuantity: (id, quantity) => {
+        set((state) => ({
+          items: state.items.map(item =>
+            item.id === id ? { ...item, quantity } : item
+          )
+        }));
+      },
+      
+      clearCart: () => {
+        set({ items: [] });
+      },
+      
+      // Calcul du total
+      getTotal: () => {
+        const state = get();
+        const total = state.items.reduce(
+          (sum, item) => sum + (Number(item.price) || 0) * (item.quantity || 0),
+          0
+        );
+        console.log('💰 Calcul total:', total);
+        return total;
+      },
+      
+      // Calcul du nombre d'articles
+      getItemCount: () => {
+        const state = get();
+        const count = state.items.reduce((sum, item) => sum + (item.quantity || 0), 0);
+        console.log('🔢 Calcul itemCount:', count);
+        return count;
+      }
+    }),
+    {
+      name: 'cart-storage',
+      getStorage: () => localStorage,
+    }
+  )
+);
+
+// Exposer les getters comme propriétés calculées
+Object.defineProperty(useCartStore, 'total', {
+  get: () => {
+    const total = useCartStore.getState().getTotal();
+    console.log('💰 total property called:', total);
+    return total;
+  }
+});
+
+Object.defineProperty(useCartStore, 'itemCount', {
+  get: () => {
+    const count = useCartStore.getState().getItemCount();
+    console.log('🔢 itemCount property called:', count);
+    return count;
+  }
+});
+
+export default useCartStore;

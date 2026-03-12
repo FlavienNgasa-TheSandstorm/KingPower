@@ -1,0 +1,389 @@
+/* ===== PAGE DÉTAIL COMMANDE PREMIUM ===== */
+
+.order-detail-page {
+  @apply p-8 bg-gradient-to-br from-gray-50 to-white min-h-screen;
+}
+
+/* ===== EN-TÊTE ===== */
+.order-header {
+  @apply flex items-center justify-between mb-8;
+}
+
+.order-header-left {
+  @apply space-y-2;
+}
+
+.order-back-link {
+  @apply inline-flex items-center space-x-2 text-gray-500
+         hover:text-yellow-600 transition-colors duration-300;
+}
+
+.order-title {
+  @apply text-4xl font-black text-gray-900 flex items-center space-x-4;
+}
+
+.order-status-badge {
+  @apply inline-flex items-center space-x-2 px-4 py-2
+         rounded-xl text-sm font-semibold;
+}
+
+.order-status-badge.pending {
+  @apply bg-yellow-100 text-yellow-800;
+}
+
+.order-status-badge.completed {
+  @apply bg-green-100 text-green-800;
+}
+
+.order-status-badge.failed {
+  @apply bg-red-100 text-red-800;
+}
+
+.order-status-badge.delivered {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.order-date {
+  @apply text-gray-500;
+}
+
+.order-header-actions {
+  @apply flex items-center space-x-3;
+}
+
+.order-action-btn {
+  @apply flex items-center space-x-2 px-4 py-2
+         bg-white border-2 border-gray-200
+         rounded-xl text-gray-600 font-medium
+         hover:border-yellow-400 hover:text-yellow-600
+         transition-all duration-300;
+}
+
+/* ===== TIMELINE ===== */
+.order-timeline {
+  @apply flex items-center justify-between mb-8 p-6
+         bg-white rounded-2xl shadow-lg border-2 border-gray-100;
+}
+
+.timeline-step-container {
+  @apply flex-1 flex items-center;
+}
+
+.timeline-step {
+  @apply flex items-center space-x-3 flex-1;
+}
+
+.timeline-icon-wrapper {
+  @apply w-10 h-10 rounded-xl bg-gray-100
+         flex items-center justify-center;
+}
+
+.timeline-step.active .timeline-icon-wrapper {
+  @apply bg-yellow-500;
+}
+
+.timeline-step.active .timeline-icon {
+  @apply text-white;
+}
+
+.timeline-step.current .timeline-icon-wrapper {
+  @apply ring-4 ring-yellow-200;
+}
+
+.timeline-icon {
+  @apply h-5 w-5 text-gray-500;
+}
+
+.timeline-content {
+  @apply flex-1;
+}
+
+.timeline-label {
+  @apply font-semibold text-gray-900;
+}
+
+.timeline-date {
+  @apply text-xs text-gray-500;
+}
+
+.timeline-connector {
+  @apply flex-1 h-1 mx-4 bg-gray-200 rounded-full;
+}
+
+.timeline-connector.active {
+  @apply bg-yellow-500;
+}
+
+/* ===== GRILLE PRINCIPALE ===== */
+.order-grid {
+  @apply grid lg:grid-cols-3 gap-6;
+}
+
+.order-left-column {
+  @apply lg:col-span-1 space-y-6;
+}
+
+.order-right-column {
+  @apply lg:col-span-2 space-y-6;
+}
+
+/* ===== CARTES ===== */
+.order-card {
+  @apply bg-white rounded-2xl shadow-lg border-2 border-gray-100
+         overflow-hidden transition-all duration-300
+         hover:shadow-xl hover:border-yellow-200;
+}
+
+.card-title {
+  @apply flex items-center space-x-2 px-6 py-4
+         bg-gradient-to-r from-gray-50 to-white
+         border-b-2 border-gray-100;
+}
+
+.card-title-icon {
+  @apply h-5 w-5 text-yellow-500;
+}
+
+.card-title span {
+  @apply font-bold text-gray-900;
+}
+
+.card-content {
+  @apply p-6;
+}
+
+/* ===== INFORMATIONS CLIENT ===== */
+.customer-name {
+  @apply text-xl font-bold text-gray-900 mb-4;
+}
+
+.customer-contact {
+  @apply flex items-center space-x-3 mb-2;
+}
+
+.contact-icon {
+  @apply h-4 w-4 text-gray-400;
+}
+
+.contact-link {
+  @apply text-gray-600 hover:text-yellow-600
+         transition-colors duration-300;
+}
+
+.customer-note {
+  @apply mt-4 p-4 bg-gray-50 rounded-xl border border-gray-200;
+}
+
+.note-label {
+  @apply text-sm font-semibold text-gray-700 mb-2;
+}
+
+.note-text {
+  @apply text-sm text-gray-600;
+}
+
+/* ===== ADRESSE ===== */
+.address-street {
+  @apply font-medium text-gray-900 mb-1;
+}
+
+.address-city,
+.address-province {
+  @apply text-gray-600;
+}
+
+/* ===== NOTES ===== */
+.notes-text {
+  @apply text-gray-700 italic;
+}
+
+/* ===== SÉLECTEUR DE STATUT ===== */
+.status-select {
+  @apply w-full px-4 py-3 rounded-xl font-semibold
+         border-2 focus:outline-none focus:ring-4
+         transition-all duration-300 cursor-pointer;
+}
+
+.status-select.pending {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-200
+         focus:ring-yellow-100;
+}
+
+.status-select.completed {
+  @apply bg-green-100 text-green-800 border-green-200
+         focus:ring-green-100;
+}
+
+.status-select.failed {
+  @apply bg-red-100 text-red-800 border-red-200
+         focus:ring-red-100;
+}
+
+.status-select.delivered {
+  @apply bg-blue-100 text-blue-800 border-blue-200
+         focus:ring-blue-100;
+}
+
+.updating-indicator {
+  @apply flex items-center space-x-2 mt-3 text-sm text-gray-500;
+}
+
+/* ===== ARTICLES ===== */
+.items-list {
+  @apply space-y-4 mb-6;
+}
+
+.order-item {
+  @apply flex items-center justify-between p-4
+         bg-gradient-to-br from-gray-50 to-white
+         rounded-xl border-2 border-gray-100
+         transition-all duration-300 hover:border-yellow-400;
+}
+
+.item-info {
+  @apply space-y-1;
+}
+
+.item-name {
+  @apply font-semibold text-gray-900;
+}
+
+.item-price {
+  @apply text-sm text-gray-500;
+}
+
+.item-total {
+  @apply font-bold text-gray-900;
+}
+
+.order-total {
+  @apply space-y-2 pt-4 border-t-2 border-gray-100;
+}
+
+.total-row {
+  @apply flex items-center justify-between text-gray-600;
+}
+
+.total-row.grand-total {
+  @apply text-lg font-bold text-gray-900 pt-2;
+}
+
+.total-amount {
+  @apply text-yellow-600;
+}
+
+/* ===== MÉTHODE DE PAIEMENT ===== */
+.payment-method {
+  @apply p-4 bg-gradient-to-br from-gray-50 to-white
+         rounded-xl border-2 border-gray-200;
+}
+
+.payment-method-name {
+  @apply font-semibold text-gray-900;
+}
+
+/* ===== LOADING ===== */
+.order-loading {
+  @apply min-h-screen flex items-center justify-center;
+}
+
+.premium-spinner {
+  @apply relative w-32 h-32 flex items-center justify-center;
+}
+
+.spinner-ring {
+  @apply absolute inset-0 border-4 border-transparent rounded-full;
+}
+
+.spinner-ring:nth-child(1) {
+  @apply border-t-yellow-500 border-r-yellow-500;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-ring:nth-child(2) {
+  @apply border-b-yellow-400 border-l-yellow-400 opacity-50;
+  animation: spin 1s linear infinite reverse;
+}
+
+.spinner-ring:nth-child(3) {
+  @apply border-yellow-300 opacity-20;
+  animation: spin 2s linear infinite;
+}
+
+.spinner-icon {
+  @apply h-12 w-12 text-yellow-500 animate-pulse;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ===== NOT FOUND ===== */
+.order-not-found {
+  @apply min-h-screen flex flex-col items-center justify-center text-center p-8;
+}
+
+.not-found-icon {
+  @apply h-16 w-16 text-red-500 mb-4;
+}
+
+.not-found-title {
+  @apply text-2xl font-bold text-gray-900 mb-2;
+}
+
+.not-found-text {
+  @apply text-gray-500 mb-6;
+}
+
+.not-found-link {
+  @apply inline-flex items-center space-x-2 px-6 py-3
+         bg-gradient-to-r from-yellow-600 to-yellow-500
+         text-white rounded-xl font-semibold
+         transition-all duration-300 hover:scale-105
+         hover:shadow-xl;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .order-grid {
+    @apply grid-cols-1;
+  }
+  
+  .order-timeline {
+    @apply flex-col items-start space-y-4;
+  }
+  
+  .timeline-step-container {
+    @apply w-full;
+  }
+  
+  .timeline-connector {
+    @apply hidden;
+  }
+}
+
+@media (max-width: 768px) {
+  .order-detail-page {
+    @apply p-4;
+  }
+  
+  .order-header {
+    @apply flex-col items-start space-y-4;
+  }
+  
+  .order-title {
+    @apply flex-col items-start space-y-2;
+  }
+  
+  .order-header-actions {
+    @apply w-full justify-start;
+  }
+  
+  .order-item {
+    @apply flex-col items-start space-y-2;
+  }
+  
+  .item-total {
+    @apply self-end;
+  }
+}

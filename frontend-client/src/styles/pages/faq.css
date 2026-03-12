@@ -1,0 +1,167 @@
+/* ========== PAGE FAQ PREMIUM ========== */
+
+.faq-page {
+  @apply bg-gradient-to-b from-white to-gray-50;
+}
+
+/* Container */
+.faq-container {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* ===== HERO SECTION ===== */
+.faq-hero {
+  @apply relative py-24 overflow-hidden bg-gradient-to-r from-gray-900 to-gray-800;
+}
+
+.faq-hero::before {
+  content: '';
+  @apply absolute inset-0 opacity-20;
+  background-image: url('https://images.unsplash.com/photo-1522673607200-164d1b6c76e6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  filter: blur(4px);
+}
+
+.faq-hero-container {
+  @apply relative z-10 max-w-4xl mx-auto text-center px-4;
+}
+
+.faq-hero-title {
+  @apply text-5xl md:text-6xl font-black text-white mb-6;
+}
+
+.faq-hero-title span {
+  @apply text-yellow-400;
+}
+
+.faq-hero-subtitle {
+  @apply text-xl text-gray-300 max-w-2xl mx-auto;
+}
+
+/* ===== FAQ SECTION ===== */
+.faq-section {
+  @apply py-24 bg-white;
+}
+
+.faq-grid {
+  @apply space-y-12;
+}
+
+.faq-category {
+  @apply bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8
+         border-2 border-gray-200 shadow-xl;
+}
+
+.faq-category-header {
+  @apply flex items-center space-x-4 mb-8 pb-4 border-b-2 border-gray-200;
+}
+
+.faq-category-icon {
+  @apply text-4xl;
+}
+
+.faq-category-title {
+  @apply text-2xl font-black text-gray-900;
+}
+
+.faq-items {
+  @apply space-y-4;
+}
+
+.faq-item {
+  @apply border-2 border-gray-200 rounded-xl overflow-hidden
+         transition-all duration-300 hover:border-yellow-400;
+}
+
+.faq-question {
+  @apply w-full flex items-center justify-between p-6 text-left
+         bg-gradient-to-r from-gray-50 to-white
+         hover:from-yellow-50 hover:to-white
+         transition-all duration-300;
+}
+
+.faq-question-text {
+  @apply text-lg font-semibold text-gray-900 pr-4;
+}
+
+.faq-question-icon {
+  @apply h-5 w-5 text-yellow-500 transition-transform duration-300;
+}
+
+.faq-question-icon.open {
+  @apply transform rotate-180;
+}
+
+.faq-answer {
+  @apply p-6 bg-gradient-to-br from-gray-50 to-white border-t-2 border-gray-200;
+}
+
+.faq-answer p {
+  @apply text-gray-700 leading-relaxed;
+}
+
+/* ===== CONTACT SECTION ===== */
+.faq-contact {
+  @apply py-24 bg-gradient-to-r from-gray-900 to-gray-800;
+}
+
+.faq-contact-container {
+  @apply max-w-4xl mx-auto text-center px-4;
+}
+
+.faq-contact-title {
+  @apply text-4xl font-black text-white mb-4;
+}
+
+.faq-contact-text {
+  @apply text-xl text-gray-300 mb-12;
+}
+
+.faq-contact-options {
+  @apply grid md:grid-cols-3 gap-6;
+}
+
+.faq-contact-btn {
+  @apply flex items-center justify-center space-x-3 px-6 py-4
+         bg-white/10 backdrop-blur-lg border-2 border-white/20
+         text-white rounded-xl font-semibold
+         transition-all duration-300 hover:scale-105
+         hover:bg-yellow-500 hover:border-yellow-400;
+}
+
+.faq-contact-btn.phone {
+  @apply hover:bg-green-600;
+}
+
+.faq-contact-btn.email {
+  @apply hover:bg-blue-600;
+}
+
+.faq-contact-icon {
+  @apply h-5 w-5;
+}
+
+.faq-contact-arrow {
+  @apply h-4 w-4 opacity-0 -translate-x-2
+         transition-all duration-300;
+}
+
+.faq-contact-btn:hover .faq-contact-arrow {
+  @apply opacity-100 translate-x-0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .faq-hero-title {
+    @apply text-4xl;
+  }
+  
+  .faq-contact-options {
+    @apply grid-cols-1;
+  }
+  
+  .faq-category-header {
+    @apply flex-col text-center space-x-0 space-y-2;
+  }
+}
