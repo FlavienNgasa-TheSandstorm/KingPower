@@ -1,5 +1,11 @@
 const express = require('express');
 const cors = require('cors');
+// Après dotenv.config(), ajoute :
+console.log('🔍 Variables d\'environnement reçues:');
+console.log('MYSQLHOST:', process.env.MYSQLHOST);
+console.log('MYSQLPORT:', process.env.MYSQLPORT);
+console.log('MYSQLUSER:', process.env.MYSQLUSER);
+console.log('MYSQLDATABASE:', process.env.MYSQLDATABASE);
 const dotenv = require('dotenv');
 const { sequelize } = require('./models/sequelize');
 const authRoutes = require('./routes/auth');
