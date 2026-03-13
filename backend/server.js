@@ -1,11 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 // Après dotenv.config(), ajoute :
-console.log('🔍 Variables d\'environnement reçues:');
-console.log('MYSQLHOST:', process.env.MYSQLHOST);
-console.log('MYSQLPORT:', process.env.MYSQLPORT);
-console.log('MYSQLUSER:', process.env.MYSQLUSER);
-console.log('MYSQLDATABASE:', process.env.MYSQLDATABASE);
+console.log('🔍 Vérification des variables:');
+console.log('MYSQLHOST:', process.env.MYSQLHOST ? '✅ Présent' : '❌ Manquant');
+console.log('MYSQLPORT:', process.env.MYSQLPORT ? '✅ Présent' : '❌ Manquant');
+console.log('MYSQLUSER:', process.env.MYSQLUSER ? '✅ Présent' : '❌ Manquant');
+console.log('MYSQLPASSWORD:', process.env.MYSQLPASSWORD ? '✅ Présent' : '❌ Manquant');
+console.log('MYSQLDATABASE:', process.env.MYSQLDATABASE ? '✅ Présent' : '❌ Manquant');
 const dotenv = require('dotenv');
 const { sequelize } = require('./models/sequelize');
 const authRoutes = require('./routes/auth');
